@@ -1,5 +1,4 @@
-
-  @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Roboto:wght@400;700;900&display=swap');
+  @import url('./fonts/fonts.css');
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -17,10 +16,16 @@ button {
     font-weight: 700;
     font-size: 15px;
     cursor: pointer;
-    transition: 0.2s ease background-color
+    transition: 0.2s ease background-color;
+    min-width: 150px;
 }
 button:hover {
     background-color: rgb(83, 165, 138);
+}
+
+#buttonwrapper {
+    display: flex;
+    gap: 30px;
 }
 
 h1 {

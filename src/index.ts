@@ -19,12 +19,13 @@ const createWindow = (): void => {
       preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
     },
   });
+  mainWindow.removeMenu()
 
   // and load the index.html of the app.
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  //mainWindow.webContents.openDevTools();
 };
 
 // This method will be called when Electron has finished
@@ -79,7 +80,7 @@ async function fileSelect(): Promise<PathLike> {
         { title: "Select a file, or create a new file", properties: ['openFile', 'promptToCreate'] }
     )
     if (canceled) {
-        return
+        return null
     } else {
         // check if file already exists
         let fileExists = false
